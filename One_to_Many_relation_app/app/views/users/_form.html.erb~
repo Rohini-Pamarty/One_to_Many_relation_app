@@ -1,0 +1,20 @@
+<%= form_for(@user) do |u| %>
+ <% if(@user).errors.any? %>
+  <div>
+    <h2>prohibited this post from being saved:</h2>
+    <ul>
+    <% (@user).errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div>
+    <%= u.label :name %><br />
+    <%= u.text_field :name %>
+  </div>
+<h2>Messages</h2>
+  <%= render :partial => 'messages/form',
+             :locals => {:form => u} %>
+<%= u.submit %>   
+<% end %>

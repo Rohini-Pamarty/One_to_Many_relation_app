@@ -1,0 +1,20 @@
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+<h2>Messages</h2>
+<%= render :partial => "messages/message",
+	   :collection => @user.messages %>
+<h2>Messages</h2>
+<%= render :partial => "accounts/account",
+	   :member => @user.accounts %>
+
+<h2>Add a Message:</h2>
+<%= render "messages/form" %>
+<br />
+<h2>Add a Account:</h2>
+<%= render "accounts/form" %>
+<br />
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

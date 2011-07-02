@@ -1,0 +1,9 @@
+<p>
+	<b>Messages:</b>
+	<%= message.text %>
+</p>
+<p>
+	<%= link_to 'Destroy Comment', [message.user,message],
+		     :confirm => 'Are you sure?' ,
+		     :method => :delete %>
+</p>	
